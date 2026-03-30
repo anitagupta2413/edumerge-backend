@@ -1,4 +1,4 @@
-const { Applicant, Program, Quota, SeatMatrix, sequelize } = require('../models');
+const { Admission, Applicant, Program, Quota, sequelize } = require('../models');
 
 const createApplicant = async (data) => {
   const t = await sequelize.transaction();
@@ -37,7 +37,8 @@ const getApplicants = async (filters = {}) => {
     where: filters,
     include: [
       { model: Program, as: 'Program' }, 
-      { model: Quota, as: 'Quota' }
+      { model: Quota, as: 'Quota' },
+      { model: Admission, as: 'Admission' }
     ]
   });
   

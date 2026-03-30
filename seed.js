@@ -1,5 +1,5 @@
-const sequelize = require('./config/db');
-const { User, Quota } = require('./models');
+const sequelize = require('./src/config/db');
+const { User, Quota } = require('./src/models');
 const bcrypt = require('bcryptjs');
 
 const seedDatabase = async () => {
